@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from app.schemas.chat import ChatRequest
-from app.services.dify_service import dify_stream_generator, get_api_key
+from app.services.dify_service import dify_stream_generator, get_api_key, dify_discuss_stream_generator
 from app.core.config import DIFY_KEYS
 
 router = APIRouter()
@@ -106,4 +106,5 @@ async def discuss_endpoint(request: ChatRequest):
         "auto_generate_name": False
     }
 
-    return StreamingResponse(dify_stream_generator(payload, discuss_key), media_type="text/event-stream")
+    # return StreamingResponse(dify_stream_generator(payload, discuss_key), media_type="text/event-stream")
+    return StreamingResponse(dify_discuss_stream_generator(payload, discuss_key), media_type="text/event-stream")
