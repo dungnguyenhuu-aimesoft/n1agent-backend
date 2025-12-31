@@ -25,7 +25,7 @@ async def create_gamma_presentation(request: ReportRequest):
         "exportAs": "pptx",
         
         # Hướng dẫn bổ sung để AI biết đây là báo cáo tổng hợp
-        "additionalInstructions": f"Create a professional summary report about '{request.topic}'. Focus on key insights, decisions, and action items from the discussion.",
+        "additionalInstructions": f"Create a professional summary report about '{request.content}'. Focus on key insights, decisions, and action items from the discussion.",
         
         "textOptions": {
             "language": "en" 

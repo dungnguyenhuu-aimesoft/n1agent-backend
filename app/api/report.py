@@ -14,9 +14,18 @@ async def create_report_endpoint(request: ReportRequest):
     - Client cần dùng ID này để gọi API `/status/{id}` kiểm tra tiến độ.
     
     **Tham số đầu vào:**
-    - `topic`: Chủ đề báo cáo.
     - `content`: Nội dung thô cần chuyển đổi.
-    - `format`: Mặc định là 'presentation'.
+    - `format`: Mặc định là 'presentation' (Allowed:presentation, document, webpage, social).
+    - `numcard`: Số lượng trang muốn tạo
+
+    **Example Body:**
+    ```json
+    {
+    "content": "Good backend development is not just about making APIs work. It’s about designing systems that are predictable, scalable, and easy to maintain.",
+    "format": "presentation",
+    "numcard": 1
+    }
+    ```
     """
     result = await create_gamma_presentation(request)
     return {
