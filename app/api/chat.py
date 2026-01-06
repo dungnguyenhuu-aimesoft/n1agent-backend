@@ -78,7 +78,7 @@ async def discuss_endpoint(request: ChatRequest):
     - **conversation_id** (str, optional): ID cuộc hội thoại cũ.
 
     **Returns:**
-    - **Stream (text/event-stream)**: Dữ liệu SSE. Frontend cần hiển thị text liên tục.
+    - **Document link:**: https://docs.google.com/document/d/1NCoiHu5sPlAyExVqZJTJ_riaXdTc_5b9vX7AGYSjIzQ/edit?usp=sharing
 
     **Example Body:**
     ```json
